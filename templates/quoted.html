@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div class="form-group">
+        <h6 class="form-control">
+            The latest price for a share of {{ name }} is {{ price }}
+        </h6>
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Cash Balance</th>
+            <th>Grand Total</th>
+        </tr>
+        <tr>
+            <td>{{ cashBal }}</td>
+            <td>{{ grandTotal }}</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>STOCK</th>
+            <th>SHARES</th>
+            <th>CURRENT PRICE</th>
+            <th>TOTAL VALUE</th>
+        </tr>
+        {% for i in range(LENGTH) %}
+        <tr>
+            <td>{{ stocksList[i] }}</td>
+            <td>{{ sharesList[i] }}</td>
+            <td>{{ pricesList[i] }}</td>
+            <td>{{ totalValList[i] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+    <form action="/" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="addCash" placeholder="Add Cash" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>STOCK</th>
+            <th>SALE PRICE</th>
+            <th>SHARES</th>
+            <th>TIME STAMP</th>
+        </tr>
+        {% for item in BIG_LIST %}
+        <tr>
+            <td>{{ item["stock"] }}</td>
+            <td>{{ item["price"] }}</td>
+            <td>{{ item["shares"] }}</td>
+            <td>{{ item["time"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <td>
+                *Sold shares represented as having a (-) sign
+            </td>
+        </tr>
+    </table>
+{% endblock %}
